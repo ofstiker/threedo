@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   View, StyleSheet, TextInput,
-  Button, Switch,
+  Button, Switch, Text,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { actionCreator } from '../reducers/actions';
@@ -57,41 +57,71 @@ class TodoAdd extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          value={this.state.title}
-          placeholder='What needs to be done?'
-          onChangeText={(title) => this.setState({title})}
-        />
-        <TextInput
-          style={styles.input}
-          value={this.state.dayStart}
-          placeholder='Starting Day?'
-          onChangeText={(dayStart) => this.setState({dayStart})}
-        />
-        <TextInput
-          style={styles.input}
-          value={this.state.dayEnd}
-          placeholder='Ending Day?'
-          onChangeText={(dayEnd) => this.setState({dayEnd})}
-        />
-        <TextInput
-          style={styles.input}
-          value={this.state.duration}
-          placeholder='Duration?'
-          onChangeText={(duration) => this.setState({duration})}
-        />
-        <TextInput
-          style={styles.input}
-          value={this.state.pomoInterval}
-          placeholder='Interval?'
-          onChangeText={(pomoInterval) => this.setState({pomoInterval})}
-        />
-        <Switch
-          style={styles.input}
-          value={this.state.active}
-          onValueChange={(active) => this.setState({active})}
-        />
+        <View style={styles.inputWrapper}>
+          <Text style={styles.label}>
+            Title
+          </Text>
+          <TextInput
+            style={styles.input}
+            value={this.state.title}
+            placeholder='What needs to be done?'
+            onChangeText={(title) => this.setState({title})}
+          />
+        </View>
+        <View style={styles.inputWrapper}>
+          <Text style={styles.label}>
+            Day Start
+          </Text>
+          <TextInput
+            style={styles.input}
+            value={this.state.dayStart}
+            placeholder='Starting Day?'
+            onChangeText={(dayStart) => this.setState({dayStart})}
+          />
+        </View>
+        <View style={styles.inputWrapper}>
+          <Text style={styles.label}>
+            Day End
+          </Text>
+          <TextInput
+            style={styles.input}
+            value={this.state.dayEnd}
+            placeholder='Ending Day?'
+            onChangeText={(dayEnd) => this.setState({dayEnd})}
+          />
+        </View>
+        <View style={styles.inputWrapper}>
+          <Text style={styles.label}>
+            Duration
+          </Text>
+          <TextInput
+            style={styles.input}
+            value={this.state.duration}
+            placeholder='Duration?'
+            onChangeText={(duration) => this.setState({duration})}
+          />
+        </View>
+        <View style={styles.inputWrapper}>
+          <Text style={styles.label}>
+            Interval
+          </Text>
+          <TextInput
+            style={styles.input}
+            value={this.state.pomoInterval}
+            placeholder='Interval?'
+            onChangeText={(pomoInterval) => this.setState({pomoInterval})}
+          />
+        </View>
+        <View style={styles.switchWrapper}>
+          <Text style={styles.label}>
+            Active
+          </Text>
+          <Switch
+            style={styles.input}
+            value={this.state.active}
+            onValueChange={(active) => this.setState({active})}
+          />
+        </View>
         <Button
           title='SUBMIT'
           onPress={this.handleSubmit}
@@ -108,11 +138,29 @@ TodoAdd.propTypes = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    paddingVertical: 10,
   },
   input: {
     paddingVertical: 10,
   },
+  label: {
+    fontSize: 20,
+    width: 120,
+  },
+  inputWrapper: {
+    paddingHorizontal: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F6F4D2',
+    // justifyContent: 'center',
+  },
+  switchWrapper: {
+    height: 50,
+    paddingHorizontal: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F6F4D2',
+  }
 });
 
 export default connect()(TodoAdd);
