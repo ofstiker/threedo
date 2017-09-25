@@ -125,22 +125,22 @@ class TodoView extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#95a5a6',
+    backgroundColor: '#FFFFFF',
   },
   titleWrapper: {
     height: 60,
-    backgroundColor: '#e74c3c',
+    backgroundColor: '#252525',
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   title: {
     padding: 10,
     fontSize: 26,
-    color: '#EEE',
+    color: '#FF9700',
   },
   timerWrapper: {
     padding: 15,
-    height: 80,
+    height: 70,
     flexDirection: 'column',
   },
   timer: {

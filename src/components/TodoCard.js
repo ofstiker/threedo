@@ -44,13 +44,14 @@ const styles = StyleSheet.create({
     padding: 10,
     height: 200,
     width: WIDTH,
-    backgroundColor: '#0E2431',
+    backgroundColor: '#252525',
     borderWidth: 1,
     borderColor: '#E8D5B7',
+    borderRadius: 16,
   },
   title: {
     fontSize: 26,
-    color: '#EEE',
+    color: '#FF9700',
   }
 });
 
