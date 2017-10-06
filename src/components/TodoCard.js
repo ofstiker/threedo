@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#252525',
     borderWidth: 1,
     borderColor: '#E8D5B7',
-    borderRadius: 16,
+    borderRadius: 10,
   },
   title: {
     fontSize: 26,
